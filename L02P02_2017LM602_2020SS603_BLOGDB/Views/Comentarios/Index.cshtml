@@ -1,0 +1,47 @@
+﻿@model IEnumerable<L02P02_2017LM602_2020SS603_BLOGDB.Models.Comentario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicacionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicacionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CometarioId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CometarioId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CometarioId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
